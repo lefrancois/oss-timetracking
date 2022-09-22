@@ -12,6 +12,7 @@
                     <i class="ri-edit-box-line p-1 text-white"></i>
                 </button>
             </div>
+            <x-stats :data="$tracker"></x-stats>
             <x-tracker :data="$tracker"></x-tracker>
         </div>
         <div>

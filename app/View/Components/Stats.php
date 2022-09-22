@@ -3,26 +3,30 @@
 namespace App\View\Components;
 
 use App\Http\Traits\DateHelpers;
-use App\Models\Timer;
+use App\Models\Tracker as TrackerModel;
 use Illuminate\View\Component;
 
-class TrackerItem extends Component
+class Stats extends Component
 {
 
     use DateHelpers;
 
-    public Timer $item;
-    public String $time;
+    public TrackerModel $tracker;
+    public String $totalTime;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(Timer $data)
+    public function __construct(TrackerModel $data)
     {
-        $this->item = $data;
-        $this->time = $this->niceTimeDisplay($this->item->duration);
+        $this->tracker = $data;
+        $this->totalTime = $this->niceTimeDisplay($this->tracker->items->sum('duration'));
+    }
+
+    public function niceTime($seconds) {
+        return 1;
     }
 
     /**
@@ -32,6 +36,6 @@ class TrackerItem extends Component
      */
     public function render()
     {
-        return view('components.tracker-item');
+        return view('components.stats');
     }
 }
