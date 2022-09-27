@@ -2,27 +2,18 @@
 
 namespace App\View\Components;
 
-use App\Http\Traits\DateHelpers;
-use App\Models\Timer;
 use Illuminate\View\Component;
 
-class TrackerItem extends Component
+class Backdrop extends Component
 {
-
-    use DateHelpers;
-
-    public Timer $item;
-    public String $time;
-
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(Timer $data)
+    public function __construct()
     {
-        $this->item = $data;
-        $this->time = $this->niceTimeDisplay($this->item->duration);
+        //
     }
 
     /**
@@ -32,6 +23,6 @@ class TrackerItem extends Component
      */
     public function render()
     {
-        return view('components.tracker-item');
+        return view('components.backdrop');
     }
 }

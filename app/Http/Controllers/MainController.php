@@ -12,9 +12,8 @@ class MainController extends Controller
     }
 
     public function tracker(String $id) {
-        $tracker = Tracker::whereIdentifier($id)->first();
         return view('frontend.tracker', [
-            'tracker' => $tracker,
+            'identifier' => $id,
         ]);
     }
 }

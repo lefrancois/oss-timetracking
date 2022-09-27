@@ -1,10 +1,10 @@
-<div x-data="{ open: false }" x-cloak>
+<div wire:click="$emit('loadTimer', {{ $item }})">
     <div class="flex shadow-sm ring-1 ring-offset-2 ring-cosu-200 justify-between group cursor-pointer p-2 rounded bg-gradient-to-r from-white to-cosu-100 relative transition-all duration-500 delay-100 {{ $item->deleted ? 'opacity-30 hover:opacity-100' : '' }}">
         <div class="flex-grow">
             <h3 class="line-clamp-1">
                 {{ $item->title }}
             </h3>
-            <div class="overflow-hidden line-clamp-2 h-0 group-hover:h-8 text-gray-500 text-xs transition-all duration-500 delay-100">
+            <div class="overflow-hidden max-w-lg line-clamp-2 h-0 group-hover:h-8 text-gray-500 text-xs transition-all duration-500 delay-100">
                 {{  $item->notes ?? '<span class=\'text-gray-300\'>Click to add description</span>' }}
             </div>
         </div>
