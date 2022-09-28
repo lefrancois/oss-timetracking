@@ -1,18 +1,16 @@
 <div class="h-full flex flex-col">
-    <header class="pb-28 lg:pb-20 bg-gradient-to-br from-cosu-500 to-cosu-700">
+    <header class="pb-4 lg:pb-20 bg-gradient-to-br from-cosu-500 to-cosu-700">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            <div class="relative flex flex-wrap items-center justify-center lg:justify-between">
-                <div class="absolute top-1 left-0 py-6 flex-shrink-0 lg:top-0 lg:static">
+            <div class="relative flex items-center justify-center justify-between">
+                <div class="top-1 left-0 py-6 flex-shrink-0 lg:top-0 lg:static">
                     <a href="/" class="">
                         <img src="{{ asset('svg/cosu_plain_white.svg') }}" class="h-12">
                     </a>
                 </div>
-                <div class="hidden lg:ml-4 lg:flex lg:items-center lg:py-5 lg:pr-0.5">
-                    <div class="ml-4 relative flex-shrink-0">
-                        <a href="https://github.com/cosu-io/timetracking" target="_blank">
-                            <i class="ri-github-fill ri-2x text-white bg-black rounded-full bg-opacity-20 shadow"></i>
-                        </a>
-                    </div>
+                <div class="ml-4">
+                    <a href="https://github.com/cosu-io/timetracking" target="_blank">
+                        <i class="ri-github-fill ri-2x text-white bg-black rounded-full bg-opacity-20 shadow"></i>
+                    </a>
                 </div>
             </div>
         </div>
