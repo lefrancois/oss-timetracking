@@ -24,8 +24,26 @@
                         {{ __('No description') }}
                     </a>
                 @endif
-                <p class="text-gray-500 mt-0.5" wire:poll.60s>
-                    {!! $this->counter !!}
+                <p class="text-gray-500 mt-0.5" x-data="{
+                    output: '',
+                    niceDuration() {
+                        const timeInput = Math.floor(dayjs().diff(dayjs('{{ $timer->start }}')) / 1000)
+                        const days = dayjs.duration(timeInput * 1000).days() >= 10 ? dayjs.duration(timeInput * 1000).days() : '0' + dayjs.duration(timeInput * 1000).days()
+                        const hours = dayjs.duration(timeInput * 1000).hours() >= 10 ? dayjs.duration(timeInput * 1000).hours() : '0' + dayjs.duration(timeInput * 1000).hours()
+                        const minutes = dayjs.duration(timeInput * 1000).minutes() >= 10 ? dayjs.duration(timeInput * 1000).minutes() : '0' + dayjs.duration(timeInput * 1000).minutes()
+                        const seconds = dayjs.duration(timeInput * 1000).seconds() >= 10 ? dayjs.duration(timeInput * 1000).seconds() : '0' + dayjs.duration(timeInput * 1000).seconds()
+                        const duration = `
+                            ${ days  != '00' ? days + '<sup class=\'text-gray-600\'>d</sup>' : '<span class=\'text-gray-400\'>' + days + '<sup class=\'text-gray-600\'>d</sup></span>'}${ hours  != '00' ? hours + '<sup class=\'text-gray-600\'>h</sup>' : '<span class=\'text-gray-400\'>' + hours + '<sup class=\'text-gray-600\'>h</sup></span>'}${ minutes  != '00' || hours  != '00' ? minutes + '<sup class=\'text-gray-600\'>m</sup>' : '<span class=\'text-gray-400\'>' + minutes + '<sup class=\'text-gray-600\'>m</sup></span>'}
+                        `
+                        return duration
+                    },
+                    init() {
+                        this.output = this.niceDuration()
+                        setInterval(() => {
+                            this.output = this.niceDuration()
+                        }, 1000)
+                    }
+                }" x-html="output">
                 </p>
             </div>
         @endif
