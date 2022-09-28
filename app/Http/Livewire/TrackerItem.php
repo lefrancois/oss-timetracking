@@ -49,6 +49,7 @@ class TrackerItem extends Component
             $this->detailsOpenedTab = 'edit';
         }
         $this->emit('refreshTracker');
+        $this->emit('updateStats');
     }
 
     public function render()

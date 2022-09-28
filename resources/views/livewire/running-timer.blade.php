@@ -14,9 +14,7 @@
                         const hours = dayjs.duration(timeInput * 1000).hours() >= 10 ? dayjs.duration(timeInput * 1000).hours() : '0' + dayjs.duration(timeInput * 1000).hours()
                         const minutes = dayjs.duration(timeInput * 1000).minutes() >= 10 ? dayjs.duration(timeInput * 1000).minutes() : '0' + dayjs.duration(timeInput * 1000).minutes()
                         const seconds = dayjs.duration(timeInput * 1000).seconds() >= 10 ? dayjs.duration(timeInput * 1000).seconds() : '0' + dayjs.duration(timeInput * 1000).seconds()
-                        const duration = `
-                            ${ days  != '00' ? days + '<sup class=\'text-gray-600\'>d</sup>' : '<span class=\'text-gray-400\'>' + days + '<sup class=\'text-gray-600\'>d</sup></span>'}${ hours  != '00' ? hours + '<sup class=\'text-gray-600\'>h</sup>' : '<span class=\'text-gray-400\'>' + hours + '<sup class=\'text-gray-600\'>h</sup></span>'}${ minutes  != '00' || hours  != '00' ? minutes + '<sup class=\'text-gray-600\'>m</sup>' : '<span class=\'text-gray-400\'>' + minutes + '<sup class=\'text-gray-600\'>m</sup></span>'}
-                        `
+                        const duration = `${ days  != '00' ? days + '<sup class=\'text-gray-600\'>d</sup>' : '<span class=\'text-gray-400\'>' + days + '<sup class=\'text-gray-600\'>d</sup></span>'}${ hours  != '00' ? hours + '<sup class=\'text-gray-600\'>h</sup>' : '<span class=\'text-gray-400\'>' + hours + '<sup class=\'text-gray-600\'>h</sup></span>'}${ minutes  != '00' || hours  != '00' ? minutes + '<sup class=\'text-gray-600\'>m</sup>' : '<span class=\'text-gray-400\'>' + minutes + '<sup class=\'text-gray-600\'>m</sup></span>'}${ seconds  != '00' || minutes  != '00' || hours  != '00' ? seconds + '<sup class=\'text-gray-600\'>s</sup>' : '<span class=\'text-gray-400\'>' + seconds + '<sup class=\'text-gray-600\'>s</sup></span>'}`
                         return duration
                     },
                     init() {
