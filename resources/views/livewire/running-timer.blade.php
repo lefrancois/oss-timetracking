@@ -5,26 +5,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"></path>
         </svg>
     </div>
-    <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md ">
-        @if ($editTitle)
-            <div class="flex-1 px-4 py-2 text-sm truncate">
-                <input wire:keydown.enter="setTitle({{ $timer->id }})" type="text" name="title" id="title" autofocus class="shadow-sm focus:ring-cyan-500 focus:border-cyan-500 block w-full sm:text-sm border-gray-300 rounded-md h-8 block" placeholder="Title" wire:model.defer="timer.title">
-                <p class="text-gray-500 mt-0.5">
-                    {!! $this->counter !!}
-                </p>
-            </div>
-        @else
-            <div class="flex-1 px-4 py-2 text-sm cursor-pointer truncate" wire:click="$set('editTitle', 'true')" wire:key="active-timer-edit-{{ $timer->id }}">
-                @if ($timer->title)
-                    <a class="text-gray-900 font-medium hover:text-gray-600 h-8 block flex items-center">
-                        {{ $timer->title }}
-                    </a>
-                @else
-                    <a class="text-gray-400 font-medium hover:text-gray-600 h-8 block flex items-center">
-                        {{ __('No description') }}
-                    </a>
-                @endif
-                <p class="text-gray-500 mt-0.5" x-data="{
+    <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md"
+         x-data="{
                     output: '',
                     niceDuration() {
                         const timeInput = Math.floor(dayjs().diff(dayjs('{{ $timer->start }}')) / 1000)
@@ -43,8 +25,24 @@
                             this.output = this.niceDuration()
                         }, 1000)
                     }
-                }" x-html="output">
-                </p>
+                }">
+        @if ($editTitle)
+            <div class="flex-1 px-4 py-2 text-sm truncate">
+                <input wire:keydown.enter="setTitle({{ $timer->id }})" type="text" name="title" id="title" autofocus class="shadow-sm focus:ring-cyan-500 focus:border-cyan-500 block w-full sm:text-sm border-gray-300 rounded-md h-8 block" placeholder="Title" wire:model.defer="timer.title">
+                <p class="text-gray-500 mt-0.5" x-html="output"></p>
+            </div>
+        @else
+            <div class="flex-1 px-4 py-2 text-sm cursor-pointer truncate" wire:click="$set('editTitle', 'true')" wire:key="active-timer-edit-{{ $timer->id }}">
+                @if ($timer->title)
+                    <a class="text-gray-900 font-medium hover:text-gray-600 h-8 block flex items-center">
+                        {{ $timer->title }}
+                    </a>
+                @else
+                    <a class="text-gray-400 font-medium hover:text-gray-600 h-8 block flex items-center">
+                        {{ __('No description') }}
+                    </a>
+                @endif
+                <p class="text-gray-500 mt-0.5" x-html="output"></p>
             </div>
         @endif
     </div>
