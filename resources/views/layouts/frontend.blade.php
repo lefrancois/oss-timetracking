@@ -8,7 +8,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
     </head>
-    <body class="font-sans antialiased bg-gradient-to-br from-gray-50 to-gray-200">
+    <body class="font-sans antialiased bg-gray-100">
         @yield('page')
         @livewireScripts
     </body>

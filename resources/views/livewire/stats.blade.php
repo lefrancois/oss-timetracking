@@ -1,6 +1,41 @@
-<div class="shadow-sm ring-1 ring-offset-2 ring-cosu-200 flex justify-center items-center text-xl cursor-pointer p-2 rounded bg-gradient-to-r from-white to-cosu-100 relative">
-    <div class="flex items-center flex-col">
-        <div class="text-sm font-bold">Total time</div>
-        <div>{!! $totalTime !!}</div>
+<section aria-labelledby="profile-overview-title">
+    <div class="rounded-lg bg-white overflow-hidden shadow mt-2 lg:mt-0">
+        <div>
+
+            <dl class="m-6 flex flex-col">
+                <div class="bg-cosu-500 overflow-hidden shadow rounded-lg col-span-2 sm:col-span-2">
+                    <div class="px-4 py-5 sm:p-4">
+                        <dt class="text-sm text-white truncate">
+                            {{ __('Total time') }}
+                        </dt>
+                        <dd class="mt-1 text-xl font-medium text-white">
+                            {!! str_replace('text-gray-600', 'white', $totalTime) !!}
+                        </dd>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="bg-white overflow-hidden shadow rounded-lg w-1/2 mr-2 mt-4">
+                        <div class="px-4 py-5 sm:p-4">
+                            <dt class="text-sm text-gray-500 truncate">
+                                {{ __('First timer started') }}
+                            </dt>
+                            <dd class="mt-1 text-xl font-medium text-gray-900">
+                                {{ $firstStart }}
+                            </dd>
+                        </div>
+                    </div>
+                    <div class="bg-white overflow-hidden shadow rounded-lg w-1/2 ml-2 mt-4">
+                        <div class="px-4 py-5 sm:p-4">
+                            <dt class="text-sm text-gray-500 truncate">
+                                {{ __('Last timer stopped') }}
+                            </dt>
+                            <dd class="mt-1 text-xl font-medium text-gray-900">
+                                {{ $lastEnd }}
+                            </dd>
+                        </div>
+                    </div>
+                </div>
+            </dl>
+        </div>
     </div>
-</div>
+</section>
