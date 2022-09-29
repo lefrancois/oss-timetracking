@@ -18,6 +18,7 @@ class TimerEdit extends Component
     protected $listeners = ['openEditor'];
 
     protected $rules = [
+        'item.tracker_id' => 'required|integer',
         'item.title' => 'nullable|string|max:250',
         'item.notes' => 'nullable|string|max:1000',
         'item.start' => 'required|date|before_or_equal:item.end',
@@ -31,7 +32,14 @@ class TimerEdit extends Component
     }
 
     public function openEditor($item) {
-        $this->item = Timer::find($item['id']);
+        $trackerId = $this->item->tracker_id;
+        if ($item != 'new') {
+            $this->item = Timer::find($item['id']);
+        } else {
+            $this->item = new Timer([
+                'tracker_id' => $trackerId,
+            ]);
+        }
         if ($this->item->deleted) {
             $this->detailsOpenedTab = 'history';
         } else {
@@ -42,7 +50,16 @@ class TimerEdit extends Component
 
     public function updateTimer() {
         $this->validate();
-        $this->item->save();
+        if ($this->item->isDirty()) {
+            if ($this->item->id) {
+                if (!$this->item->isClean(['start', 'end'])) {
+                    $this->item->edited = true;
+                }
+            } else {
+                $this->item->manual = true;
+            }
+            $this->item->save();
+        };
         $this->closeTimerDetails();
     }
 
