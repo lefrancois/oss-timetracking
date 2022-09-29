@@ -49,12 +49,12 @@
             @else
                 <div class="" v-if="filteredTimers.length == 0 && selectedDate != undefined">
                     <div class="text-center text-xl font-medium py-6">
-                        No timers found for this date
-                        <div @click="resetFilter()" class="mt-4 mx-auto bg-cyan-500 shadow p-1 w-32 text-center text-base font-medium rounded-md cursor-pointer flex justify-center items-center hover:bg-cyan-600 text-gray-200">
-                            <div class="">
-                                Reset filter
-                            </div>
-                        </div>
+                        {{ __('No timers found') }}
+{{--                        <div @click="resetFilter()" class="mt-4 mx-auto bg-cyan-500 shadow p-1 w-32 text-center text-base font-medium rounded-md cursor-pointer flex justify-center items-center hover:bg-cyan-600 text-gray-200">--}}
+{{--                            <div class="">--}}
+{{--                                Reset filter--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             @endif

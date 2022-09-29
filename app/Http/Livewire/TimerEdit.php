@@ -5,12 +5,14 @@ namespace App\Http\Livewire;
 use App\Http\Traits\DateHelpers;
 use App\Models\Timer;
 use Livewire\Component;
+use Ramsey\Uuid\Type\Integer;
 
 class TimerEdit extends Component
 {
     use DateHelpers;
 
     public Timer $item;
+    public $trackerId;
     public String $time;
     public Bool $showDetails = false;
     public String $detailsOpenedTab = 'edit';
@@ -32,12 +34,11 @@ class TimerEdit extends Component
     }
 
     public function openEditor($item) {
-        $trackerId = $this->item->tracker_id;
         if ($item != 'new') {
             $this->item = Timer::find($item['id']);
         } else {
             $this->item = new Timer([
-                'tracker_id' => $trackerId,
+                'tracker_id' => $this->trackerId,
             ]);
         }
         if ($this->item->deleted) {

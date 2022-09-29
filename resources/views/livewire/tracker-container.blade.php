@@ -19,7 +19,7 @@
     <main class="flex-1">
         <div class>
             <div class="-mt-14 lg:-mt-20 pb-8 h-full">
-                @livewire('timer-edit', ['item' => $tracker->items->first(), key('edit-overlay')])
+                @livewire('timer-edit', ['item' => $tracker->items->first() ?? new App\Models\Timer(), 'trackerId' => $tracker->id, key('edit-overlay')])
                 <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
                     <div class="hidden md:grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8" wire:key="desktop">
                         <div class="grid grid-cols-1 gap-4 lg:col-span-2">
