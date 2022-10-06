@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Http\Traits\DateHelpers;
 use App\Models\Timer;
+use Carbon\Carbon;
 use Livewire\Component;
 use Ramsey\Uuid\Type\Integer;
 
@@ -53,7 +54,7 @@ class TimerEdit extends Component
         $this->validate();
         if ($this->item->isDirty()) {
             if ($this->item->id) {
-                if (!$this->item->isClean(['start', 'end'])) {
+                if ($this->item->start != $this->item->getOriginal('start')->startOfMinute() || $this->item->end != $this->item->getOriginal('end')->startOfMinute()) {
                     $this->item->edited = true;
                 }
             } else {
