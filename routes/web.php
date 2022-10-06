@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainController::class, 'index']);
+Route::get('/t', [MainController::class, 'create'])->name('create');
 Route::get('/t/{id}', [MainController::class, 'tracker'])->name('tracker');
+
+Route::get('/imprint', [MainController::class, 'imprint'])->name('imprint');
+Route::get('/privacy', [MainController::class, 'privacy'])->name('privacy');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

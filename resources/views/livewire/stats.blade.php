@@ -9,7 +9,7 @@
                             {{ __('Total time') }}
                         </dt>
                         <dd class="mt-1 text-xl font-medium text-white">
-                            {!! str_replace('text-gray-600', 'white', $totalTime) !!}
+                            {!! str_replace(['text-gray-600','text-gray-400'], 'white', $totalTime) !!}
                         </dd>
                     </div>
                 </div>

@@ -17,6 +17,7 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
+        "dayjs": "^1.11.5",
         "remixicon": "^2.5.0",
         "tippy.js": "^6.3.7"
     }

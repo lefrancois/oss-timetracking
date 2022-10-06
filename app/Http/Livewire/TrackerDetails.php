@@ -39,7 +39,7 @@ class TrackerDetails extends Component
         $this->emit('refreshTracker');
     }
     public function createManualTimer() {
-        // TODO: Create function
+        $this->emit('openEditor', 'new');
     }
 
     public function render()

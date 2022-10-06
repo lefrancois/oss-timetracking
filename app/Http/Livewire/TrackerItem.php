@@ -12,43 +12,11 @@ class TrackerItem extends Component
 
     public Timer $item;
     public String $time;
-    public Bool $showDetails = false;
-    public String $detailsOpenedTab = 'edit';
 
-    protected $rules = [
-        'item.title' => 'nullable|string|max:250',
-        'item.notes' => 'nullable|string|max:1000',
-        'item.start' => 'required|date|before_or_equal:item.end',
-        'item.end' => 'required|date|after_or_equal:item.start',
-    ];
+    protected $listeners = ['refreshTracker' => '$refresh'];
 
-    public function mount() {
-        if ($this->item->deleted) {
-            $this->detailsOpenedTab = 'history';
-        }
-    }
-
-    public function updateTimer() {
-        $this->validate();
-        $this->item->save();
-        $this->closeTimerDetails();
-    }
-
-    public function deleteTimer() {
-        $this->item->update([
-            'deleted' => true,
-        ]);
-        $this->closeTimerDetails();
-    }
-
-    public function closeTimerDetails() {
-        $this->showDetails = false;
-        if ($this->item->deleted) {
-            $this->detailsOpenedTab = 'history';
-        } else {
-            $this->detailsOpenedTab = 'edit';
-        }
-        $this->emit('refreshTracker');
+    public function openEditor() {
+        $this->emit('openEditor', $this->item);
     }
 
     public function render()
