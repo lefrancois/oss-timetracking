@@ -7,9 +7,12 @@
                         <img src="{{ asset('svg/cosu_plain_white.svg') }}" class="h-12">
                     </a>
                 </div>
-                <div class="ml-4">
+                <div class="space-x-2">
+                    <a href="https://discord.gg/ZDRk3YG4kY" target="_blank">
+                        <i class="ri-discord-fill ri-2x text-white"></i>
+                    </a>
                     <a href="https://github.com/cosu-io/timetracking" target="_blank">
-                        <i class="ri-github-fill ri-2x text-white bg-black rounded-full bg-opacity-20 shadow"></i>
+                        <i class="ri-github-fill ri-2x text-white"></i>
                     </a>
                 </div>
             </div>
