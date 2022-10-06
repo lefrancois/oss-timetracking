@@ -32,6 +32,7 @@
                         <div class="grid grid-cols-1 gap-4">
                             @livewire('stats', ['tracker' => $tracker], key('stats-d-'.$tracker->id))
                             @livewire('running-timer-list', ['tracker' => $tracker], key('running-d-'.$tracker->id))
+                            <x-roadmap></x-roadmap>
                         </div>
                     </div>
                     <div class="grid md:hidden grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8" wire:key="mobile">
@@ -40,6 +41,7 @@
                             @livewire('stats', ['tracker' => $tracker], key('stats-m-'.$tracker->id))
                             @livewire('running-timer-list', ['tracker' => $tracker], key('running-m-'.$tracker->id))
                             @livewire('stopped-timer-list', ['tracker' => $tracker], key('stopped-m-'.$tracker->id))
+                            <x-roadmap></x-roadmap>
                         </div>
                     </div>
                 </div>
