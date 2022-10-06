@@ -7,7 +7,7 @@
                 </div>
                 <div class="flex">
                     <input type="text" wire:model.debounce="filterText" placeholder="{{ __('Searchstring') }}" class="h-10 shadow-sm w-full ml-0 items-center flex focus:ring-cosu-500 focus:border-cosu-500 block w-full sm:text-sm border-gray-300 rounded-l-md">
-                    <button class="bg-cosu-900 text-white rounded-r-md px-3 text-xs whitespace-nowrap" wire:click="$set('filterText', null)">
+                    <button class="bg-cosu-700 text-white rounded-r-md px-3 text-xs whitespace-nowrap" wire:click="$set('filterText', null)">
                         {{ __('Reset filter') }}
                     </button>
                 </div>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="flex">
                     <input type="date" wire:model.debounce="filterDate" class="h-10 shadow-sm w-full ml-0 items-center flex focus:ring-cosu-500 focus:border-cosu-500 block w-full sm:text-sm border-gray-300 rounded-l-md">
-                    <button class="bg-cosu-900 text-white rounded-r-md px-3 text-xs whitespace-nowrap" wire:click="$set('filterDate', null)">
+                    <button class="bg-cosu-700 text-white rounded-r-md px-3 text-xs whitespace-nowrap" wire:click="$set('filterDate', null)">
                         {{ __('Reset filter') }}
                     </button>
                 </div>
@@ -28,7 +28,7 @@
                     {{ __('Filter deleted') }}
                 </div>
                 <div class="">
-                    <input type="checkbox" wire:model.debounce="filterDeleted" class="appearance-none h-10 shadow-sm w-10 border-gray-300 checked:bg-cosu-900 checked:hover:bg-cosu-900 rounded-md">
+                    <input type="checkbox" wire:model.debounce="filterDeleted" class="appearance-none h-10 shadow-sm w-10 border-gray-300 checked:bg-cosu-700 checked:hover:bg-cosu-700 rounded-md">
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
                     @endphp
                     @foreach($items->whereNotNull('end')->sortByDesc('start') as $timer)
                         @if ($lastDate != $timer->start->format('d.m.Y'))
-                            <div class="text-xs py-1 px-3 text-center bg-cosu-900 text-white">
+                            <div class="text-xs py-1 px-3 text-center bg-cosu-700 text-white">
                                 {{ $timer->start->format('d.m.Y') }}
                             </div>
                         @endif
