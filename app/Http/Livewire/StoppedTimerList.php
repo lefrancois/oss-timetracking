@@ -17,10 +17,6 @@ class StoppedTimerList extends Component
 
     protected $listeners = ['refreshTracker' => '$refresh'];
 
-    public function mount() {
-        $this->filter();
-    }
-
     public function filter() {
         $this->items = $this->tracker->items;
         if ($this->filterDate) {
@@ -36,20 +32,9 @@ class StoppedTimerList extends Component
         }
     }
 
-    public function updatedFilterDate() {
-        $this->filter();
-    }
-
-    public function updatedFilterText() {
-        $this->filter();
-    }
-
-    public function updatedFilterDeleted() {
-        $this->filter();
-    }
-
     public function render()
     {
+        $this->filter();
         return view('livewire.stopped-timer-list');
     }
 }
