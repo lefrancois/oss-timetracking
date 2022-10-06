@@ -49,42 +49,5 @@
         </div>
     </main>
 
-    <footer>
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
-            <div class="border-t border-gray-200 py-8 text-sm text-gray-500 text-center sm:text-left">
-                <div class="flex justify-center flex-col lg:flex items-center">
-                    <div class="w-full text-center">
-                        <span class="">&copy; {{ \Carbon\Carbon::now()->format('Y') }} COSU</span>
-                        <span class=""> All rights reserved.</span>
-                    </div>
-                    <div class="w-full mt-4 flex justify-center">
-                        <a class="block sm:inline hover:text-gray-700 mx-2" href="#" target="_blank">{{ __('Imprint') }}</a>
-                        <a class="block sm:inline hover:text-gray-700 mx-2" href="#" target="_blank">{{ __('Data protection') }}</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <x-footer></x-footer>
 </div>
-
-{{--<div>--}}
-{{--    <div class="min-h-screen">--}}
-{{--        <div class="container shadow-lg bg-white min-h-screen p-2 lg:p-4 grid grid-cols-1 lg:grid-cols-2 mx-auto gap-16 flex-col">--}}
-{{--            <div class="space-y-3">--}}
-{{--                <div class="flex">--}}
-{{--                    <button class="bg-cosu-800 text-white hover:bg-cosu-900 transition-colors p-2 rounded-l w-full flex-grow">--}}
-{{--                        {{ __('Start timer') }}--}}
-{{--                    </button>--}}
-{{--                    <button class="bg-cosu-700 text-white transition-colors p-2 rounded-r w-16 flex-shrink" data-tippy-content="{{ __('Add manual timer') }}">--}}
-{{--                        <i class="ri-edit-box-line p-1 text-white"></i>--}}
-{{--                    </button>--}}
-{{--                </div>--}}
-{{--                @livewire('stats', ['tracker' => $tracker])--}}
-{{--                @livewire('tracker', ['tracker' => $tracker])--}}
-{{--            </div>--}}
-{{--            <div>--}}
-{{--                 @livewire('timer-edit')--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}

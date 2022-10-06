@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
         "owen-it/laravel-auditing": "^13.0",
+        "robinvdvleuten/ulid": "^5.0",
         "simplesoftwareio/simple-qrcode": "~4"
     },
     "require-dev": {

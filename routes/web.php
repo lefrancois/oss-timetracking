@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainController::class, 'index']);
+Route::get('/t', [MainController::class, 'create'])->name('create');
 Route::get('/t/{id}', [MainController::class, 'tracker'])->name('tracker');
 
 Route::get('/dashboard', function () {
