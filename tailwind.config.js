@@ -1,6 +1,3 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-
-/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
@@ -23,9 +20,6 @@ module.exports = {
                     '800': '#056387',
                     '900': '#0b516f',
                 },
-            },
-            fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
     },
