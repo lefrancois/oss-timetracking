@@ -37,16 +37,18 @@
                                 <div wire:click="downloadQrCode" class="flex-shrink-0 flex justify-start items-center cursor-pointer">
                                     <img src="{{ asset('svg/qr.svg') }}" class="w-5 h-5 opacity-40 mr-2">
                                 </div>
-                                <div x-data="{ downloadOpen: false }" class="opacity-40 flex-shrink-0 flex justify-start items-center cursor-pointer">
-                                    <i class="ri-download-line ri-lg mr-2" @click="downloadOpen = !downloadOpen"></i>
-                                    <div x-show="downloadOpen" class="flex space-x-2">
-                                        <div class="text-xs cursor-pointer" wire:click="export('xlsx')">XLSX</div>
-                                        <div class="text-xs cursor-pointer" wire:click="export('csv')">CSV</div>
-                                        <div class="text-xs cursor-pointer" wire:click="export('pdf')">PDF</div>
-                                        <div class="text-xs cursor-pointer" wire:click="export('html')">HTML</div>
-                                        <div class="text-xs cursor-pointer" wire:click="export('json')">JSON</div>
+                                @if ($tracker->items->whereNotNull('end')->count())
+                                    <div x-data="{ downloadOpen: false }" class="opacity-40 flex-shrink-0 flex justify-start items-center cursor-pointer">
+                                        <i class="ri-download-line ri-lg mr-2" @click="downloadOpen = !downloadOpen"></i>
+                                        <div x-show="downloadOpen" class="flex space-x-2">
+                                            <div class="text-xs cursor-pointer" wire:click="export('xlsx')">XLSX</div>
+                                            <div class="text-xs cursor-pointer" wire:click="export('csv')">CSV</div>
+                                            <div class="text-xs cursor-pointer" wire:click="export('pdf')">PDF</div>
+                                            <div class="text-xs cursor-pointer" wire:click="export('html')">HTML</div>
+                                            <div class="text-xs cursor-pointer" wire:click="export('json')">JSON</div>
+                                        </div>
                                     </div>
-                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>

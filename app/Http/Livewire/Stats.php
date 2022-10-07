@@ -23,7 +23,7 @@ class Stats extends Component
     }
 
     public function updateStats() {
-        if ($this->tracker->items->count()) {
+        if ($this->tracker->items->whereNotNull('end')->count()) {
             $this->totalTime = $this->niceTimeDisplay($this->tracker->items->where('deleted', 0)->sum('duration'));
             $this->firstStart = $this->tracker->items->sortBy('start')->first()->start->format('d.m.Y H:i');
             $this->lastEnd = $this->tracker->items->sortByDesc('end')->first()->end->format('d.m.Y H:i');

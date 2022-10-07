@@ -7,11 +7,11 @@
                 </h4>
                 <ul role="list" class="-mb-8">
 
+                    <x-roadmap-item icon="table" :done="true">
+                        JSON, CSV and XLS export
+                    </x-roadmap-item>
                     <x-roadmap-item icon="bar-chart">
                         Charts, everybody loves charts
-                    </x-roadmap-item>
-                    <x-roadmap-item icon="table">
-                        JSON, CSV and XLS export
                     </x-roadmap-item>
                     <x-roadmap-item icon="price-tag-3">
                         Tags for timers
