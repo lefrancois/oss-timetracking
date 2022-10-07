@@ -22,8 +22,12 @@ class MainController extends Controller
 
     public function tracker(string $id)
     {
-        return view('frontend.tracker', [
-            'identifier' => $id,
-        ]);
+        if (Tracker::where('identifier', $id)->count()) {
+            return view('frontend.tracker', [
+                'identifier' => $id,
+            ]);
+        } else {
+            return redirect()->route('index');
+        }
     }
 }
