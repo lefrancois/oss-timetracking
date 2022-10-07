@@ -7,6 +7,11 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
+        @if (config('app.env') == 'production')
+            <!-- Fathom - beautiful, simple website analytics -->
+            <script src="https://cdn.usefathom.com/script.js" data-site="YEJMLZUU" defer></script>
+            <!-- / Fathom -->
+        @endif
     </head>
     <body class="font-sans antialiased bg-gray-100">
         @yield('page')

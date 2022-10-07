@@ -2,10 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Exports\TrackerExport;
 use App\Models\Timer;
+use App\Models\Tracker;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use App\Models\Tracker as TrackerModel;
+use Maatwebsite\Excel\Facades\Excel;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class TrackerDetails extends Component
@@ -38,8 +42,26 @@ class TrackerDetails extends Component
         ]);
         $this->emit('refreshTracker');
     }
+
     public function createManualTimer() {
         $this->emit('openEditor', 'new');
+    }
+
+    public function export(String $format) {
+        $export = new TrackerExport($this->tracker->id);
+        if ($format == 'json') {
+            $res = Timer::where('tracker_id', $this->tracker->id)->orderBy('start')->select('title', 'notes', 'start', 'end', 'duration', 'edited', 'manual', 'deleted')->get();
+            Storage::disk('public')->put('/temp/tracker-'.$this->tracker->identifier.'.json', json_encode($res));
+            return response()->download('storage/temp/tracker-'.$this->tracker->identifier.'.json')->deleteFileAfterSend();
+        };
+        $excel = match ($format) {
+            'xlsx' => \Maatwebsite\Excel\Excel::XLSX,
+            'xls' => \Maatwebsite\Excel\Excel::XLS,
+            'csv' => \Maatwebsite\Excel\Excel::CSV,
+            'pdf' => \Maatwebsite\Excel\Excel::DOMPDF,
+            'html' => \Maatwebsite\Excel\Excel::HTML,
+        };
+        return Excel::download($export, 'tracker-'.$this->tracker->identifier.'.'.$format, $excel);
     }
 
     public function render()
