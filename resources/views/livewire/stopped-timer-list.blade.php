@@ -1,12 +1,12 @@
 <div>
     @if ($tracker->items->count())
-        <div class="flex justify-between items-center space-x-4">
+        <div class="flex justify-between items-center lg:space-x-4 flex-col lg:flex-row">
             <div class="mb-3 w-full">
                 <div class="text-xs font-bold mb-1">
-                    {{ __('Search for ...') }}
+                    {{ __('Search') }}
                 </div>
                 <div class="flex">
-                    <input type="text" wire:model.debounce="filterText" placeholder="{{ __('Searchstring') }}" class="h-10 shadow-sm w-full ml-0 items-center flex focus:ring-cosu-500 focus:border-cosu-500 block w-full sm:text-sm border-gray-300 rounded-l-md">
+                    <input type="text" wire:model.debounce="filterText" placeholder="{{ __('Title, note, ...') }}" class="h-8 shadow-sm w-full ml-0 items-center flex focus:ring-cosu-500 focus:border-cosu-500 block w-full sm:text-sm border-gray-300 rounded-l-md">
                     <button class="bg-cosu-700 text-white rounded-r-md px-3 text-xs whitespace-nowrap" wire:click="$set('filterText', null)">
                         {{ __('Reset filter') }}
                     </button>
@@ -17,24 +17,24 @@
                     {{ __('Date filter') }}
                 </div>
                 <div class="flex">
-                    <input type="date" wire:model.debounce="filterDate" class="h-10 shadow-sm w-full ml-0 items-center flex focus:ring-cosu-500 focus:border-cosu-500 block w-full sm:text-sm border-gray-300 rounded-l-md">
+                    <input type="date" wire:model.debounce="filterDate" class="h-8 shadow-sm w-full ml-0 items-center flex focus:ring-cosu-500 focus:border-cosu-500 block w-full sm:text-sm border-gray-300 rounded-l-md">
                     <button class="bg-cosu-700 text-white rounded-r-md px-3 text-xs whitespace-nowrap" wire:click="$set('filterDate', null)">
                         {{ __('Reset filter') }}
                     </button>
                 </div>
             </div>
-            <div class="mb-3 w-full text-right">
+            <div class="mb-3 w-full text-left lg:text-right">
                 <div class="text-xs font-bold mb-1">
                     {{ __('Filter deleted') }}
                 </div>
                 <div class="">
-                    <input type="checkbox" wire:model.debounce="filterDeleted" class="appearance-none h-10 shadow-sm w-10 border-gray-300 checked:bg-cosu-700 checked:hover:bg-cosu-700 rounded-md">
+                    <input type="checkbox" wire:model.debounce="filterDeleted" class="appearance-none h-8 shadow-sm w-8 border-gray-300 checked:bg-cosu-700 checked:hover:bg-cosu-700 rounded-md">
                 </div>
             </div>
         </div>
     @endif
 
-        <div class="bg-white shadow overflow-hidden sm:rounded-md">
+        <div class="bg-white shadow overflow-hidden rounded-md">
 
             @if ($items->whereNotNull('end')->count())
                 <ul class="divide-y divide-gray-200">
