@@ -110,7 +110,7 @@
                             <span class="block">Time tracking was never that easy!</span>
                         </h1>
                         <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                            We tried to provide an easy to use and data protection free time tracking tool for everyone. Have fun & try!
+                            We provide an easy to use and data protection free time tracking tool for everyone. Have fun & try!
                         </p>
                         <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
                             <div class="rounded-md shadow">
