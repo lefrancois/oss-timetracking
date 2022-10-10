@@ -11,8 +11,8 @@
                 </p>
             </div>
             <div class="text-center lg:text-left flex lg:block justify-center">
-                <a class="block sm:inline hover:text-gray-700 mx-2" href="#" target="_blank">{{ __('Imprint') }}</a>
-                <a class="block sm:inline hover:text-gray-700 mx-2" href="#" target="_blank">{{ __('Privacy policy') }}</a>
+                <a class="block sm:inline hover:text-gray-700 mx-2" href="{{ route('legal') }}" target="_blank">{{ __('Legal Notice') }}</a>
+                <a class="block sm:inline hover:text-gray-700 mx-2" href="{{ route('privacy') }}" target="_blank">{{ __('Privacy policy') }}</a>
             </div>
             <div class="text-center lg:hidden">
                 <p>

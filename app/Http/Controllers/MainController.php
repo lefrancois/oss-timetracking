@@ -12,6 +12,16 @@ class MainController extends Controller
         return view('frontend.index');
     }
 
+    public function legal()
+    {
+        return view('frontend.legal');
+    }
+
+    public function privacy()
+    {
+        return view('frontend.privacy-policy');
+    }
+
     public function create()
     {
         $tracker = Tracker::create([
@@ -22,8 +32,12 @@ class MainController extends Controller
 
     public function tracker(string $id)
     {
-        return view('frontend.tracker', [
-            'identifier' => $id,
-        ]);
+        if (Tracker::where('identifier', $id)->count()) {
+            return view('frontend.tracker', [
+                'identifier' => $id,
+            ]);
+        } else {
+            return redirect()->route('index');
+        }
     }
 }

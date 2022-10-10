@@ -35,26 +35,19 @@
             <div class="mt-2 sm:flex sm:justify-between">
                 <div class="sm:flex sm:w-1/3">
                     <p class="flex items-center text-sm text-gray-500">
-                        <!-- Heroicon name: users -->
-                        <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
+                        <i class="ri-time-line ri-lg mr-2"></i>
                         {!! $time !!}
                     </p>
                 </div>
                 <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:w-1/3">
-                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                    </svg>
+                    <i class="ri-calendar-line ri-lg mr-2"></i>
                     <p class="">
                         <span class="font-semibold">{{ __('Started') }}: </span>
                         <time>{{ $item->start->format('d.m.Y H:i') }}</time>
                     </p>
                 </div>
                 <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:w-1/3">
-                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                    </svg>
+                    <i class="ri-calendar-2-fill ri-lg mr-2"></i>
                     <p class="">
                         <span class="font-semibold">Stopped: </span>
                         <time>{{ $item->end->format('d.m.Y H:i') }}</time>
