@@ -18,7 +18,7 @@ Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/t', [MainController::class, 'create'])->name('create');
 Route::get('/t/{id}', [MainController::class, 'tracker'])->name('tracker');
 
-Route::get('/imprint', [MainController::class, 'imprint'])->name('imprint');
+Route::get('/legal', [MainController::class, 'legal'])->name('legal');
 Route::get('/privacy', [MainController::class, 'privacy'])->name('privacy');
 
 Route::get('/dashboard', function () {

@@ -12,6 +12,16 @@ class MainController extends Controller
         return view('frontend.index');
     }
 
+    public function legal()
+    {
+        return view('frontend.legal');
+    }
+
+    public function privacy()
+    {
+        return view('frontend.privacy-policy');
+    }
+
     public function create()
     {
         $tracker = Tracker::create([
