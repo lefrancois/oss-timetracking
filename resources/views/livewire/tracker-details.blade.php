@@ -31,15 +31,15 @@
                             </div>
                             <div class="w-full relative flex">
                                 <input class="w-full text-sm pl-0 font-light text-black tracking-wide border-0 outline-none" disabled type="text" name="url" value="{{ url('/t/'.$tracker->identifier) }}" id="urlCopyField">
-                                <div class="flex-shrink-0 flex justify-start items-center cursor-pointer" onclick="copyToClipboard('{{ url('/t/'.$tracker->identifier) }}')">
-                                    <img src="{{ asset('svg/copy.svg') }}" class="w-5 h-5 opacity-40 mr-2">
+                                <div data-tippy-content="{{ __('Copy URL to clipboard') }}" class="flex-shrink-0 flex justify-start items-center cursor-pointer" onclick="copyToClipboard('{{ url('/t/'.$tracker->identifier) }}')">
+                                    <i class="ri-clipboard-line ri-lg mx-1 opacity-40"></i>
                                 </div>
-                                <div wire:click="downloadQrCode" class="flex-shrink-0 flex justify-start items-center cursor-pointer">
-                                    <img src="{{ asset('svg/qr.svg') }}" class="w-5 h-5 opacity-40 mr-2">
+                                <div data-tippy-content="{{ __('Download QR code') }}" wire:click="downloadQrCode" class="flex-shrink-0 flex justify-start items-center cursor-pointer">
+                                    <i class="ri-qr-code-line ri-lg mx-1 opacity-40"></i>
                                 </div>
                                 @if ($tracker->items->whereNotNull('end')->count())
-                                    <div x-data="{ downloadOpen: false }" class="opacity-40 flex-shrink-0 flex justify-start items-center cursor-pointer">
-                                        <i class="ri-download-line ri-lg mr-2" @click="downloadOpen = !downloadOpen"></i>
+                                    <div data-tippy-content="{{ __('Export data') }}" x-data="{ downloadOpen: false }" class="opacity-40 flex-shrink-0 flex justify-start items-center cursor-pointer" @mouseleave.debounce.1000ms="downloadOpen = false">
+                                        <i class="ri-download-line ri-lg mx-1" @click="downloadOpen = !downloadOpen"></i>
                                         <div x-show="downloadOpen" class="flex space-x-2">
                                             <div class="text-xs cursor-pointer" wire:click="export('xlsx')">XLSX</div>
                                             <div class="text-xs cursor-pointer" wire:click="export('csv')">CSV</div>
@@ -55,8 +55,8 @@
                 </div>
             </div>
             <div class="border-t border-gray-200 bg-gray-50 flex divide-y divide-gray-200 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
-                <div class="px-6 py-5 text-sm font-medium flex justify-center items-centertext-center hover:bg-gray-200 cursor-pointer duration-300 ease-in-out w-1/2 md:w-3/4" wire:click="startTimer">
-                    <img src="{{ asset('svg/play.svg') }}" class="w-5 h-5 opacity-40 mr-2">
+                <div class="px-6 py-5 text-sm font-medium flex justify-center items-center text-cosu-600 text-center hover:bg-gray-200 cursor-pointer duration-300 ease-in-out w-1/2 md:w-3/4" wire:click="startTimer">
+                    <i class="ri-play-circle-line ri-lg mr-2"></i>
                     <span class="text-cosu-600 flex justify-center items-center">
                         Start new timer
                     </span>
