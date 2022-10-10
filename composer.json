@@ -16,7 +16,8 @@
         "owen-it/laravel-auditing": "^13.0",
         "psr/simple-cache": "^2.0",
         "robinvdvleuten/ulid": "^5.0",
-        "simplesoftwareio/simple-qrcode": "~4"
+        "simplesoftwareio/simple-qrcode": "~4",
+        "spatie/laravel-ignition": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -25,8 +26,7 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
-        "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
         "psr-4": {
