@@ -7,7 +7,7 @@
             </div>
             <div class="text-center hidden lg:block">
                 <p>
-                    <a href="https://usefathom.com/ref/ABAKKC" target="_blank" class="text-xs">We ❤️ beautiful, simple website analytics by Fathom</a>
+                    <a href="https://usefathom.com/ref/ABAKKC" onclick="fathom.trackGoal('PMGAN0JI', 0);" target="_blank" class="text-xs">We ❤️ beautiful, simple website analytics by Fathom</a>
                 </p>
             </div>
             <div class="text-center lg:text-left flex lg:block justify-center">
@@ -16,7 +16,7 @@
             </div>
             <div class="text-center lg:hidden">
                 <p>
-                    <a href="https://usefathom.com/ref/ABAKKC" target="_blank" class="text-xs">We ❤️ beautiful, simple website analytics by Fathom</a>
+                    <a href="https://usefathom.com/ref/ABAKKC" onclick="fathom.trackGoal('PMGAN0JI', 0);" target="_blank" class="text-xs">We ❤️ beautiful, simple website analytics by Fathom</a>
                 </p>
             </div>
         </div>

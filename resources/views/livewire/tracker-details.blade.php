@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-200 bg-gray-50 flex divide-y divide-gray-200 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
-                <div class="px-6 py-5 text-sm font-medium flex justify-center items-center text-cosu-600 text-center hover:bg-gray-200 cursor-pointer duration-300 ease-in-out w-1/2 md:w-3/4" wire:click="startTimer">
+                <div class="px-6 py-5 text-sm font-medium flex justify-center items-center text-cosu-600 text-center hover:bg-gray-200 cursor-pointer duration-300 ease-in-out w-1/2 md:w-3/4" wire:click="startTimer" onclick="fathom.trackGoal('ZK5L4BBF', 0);">
                     <i class="ri-play-circle-line ri-lg mr-2"></i>
                     <span class="text-cosu-600 flex justify-center items-center">
                         Start new timer
