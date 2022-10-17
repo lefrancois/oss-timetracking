@@ -114,7 +114,7 @@
                         </p>
                         <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
                             <div class="rounded-md shadow">
-                                <a href="{{ route('create') }}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cosu-600 hover:bg-cosu-700 md:py-4 md:text-lg md:px-10 cursor-pointer">
+                                <a href="{{ route('create') }}" onclick="fathom.trackGoal('TODB6QOV', 0);" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cosu-600 hover:bg-cosu-700 md:py-4 md:text-lg md:px-10 cursor-pointer">
                                     Start tracking
                                 </a>
                             </div>
@@ -343,7 +343,7 @@
                                             </ul>
                                             <div class="mt-8">
                                                 <div class="rounded-lg shadow-md">
-                                                    <a href="{{ route('create') }}" class="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-cosu-600 hover:bg-gray-50 cursor-pointer" aria-describedby="tier-hobby">
+                                                    <a href="{{ route('create') }}" onclick="fathom.trackGoal('TODB6QOV', 0);" class="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-cosu-600 hover:bg-gray-50 cursor-pointer" aria-describedby="tier-hobby">
                                                         Start now
                                                     </a>
                                                 </div>
@@ -431,7 +431,7 @@
                                         </ul>
                                         <div class="mt-10">
                                             <div class="rounded-lg shadow-md">
-                                                <a href="{{ route('create') }}" class="block w-full text-center rounded-lg border border-transparent bg-cosu-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-cosu-700 cursor-pointer" aria-describedby="tier-growth">
+                                                <a href="{{ route('create') }}" onclick="fathom.trackGoal('TODB6QOV', 0);" class="block w-full text-center rounded-lg border border-transparent bg-cosu-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-cosu-700 cursor-pointer" aria-describedby="tier-growth">
                                                     Start now
                                                 </a>
                                             </div>
@@ -499,7 +499,7 @@
                                             </ul>
                                             <div class="mt-8">
                                                 <div class="rounded-lg shadow-md">
-                                                    <a href="{{ route('create') }}" class="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-cosu-600 hover:bg-gray-50 cursor-pointer" aria-describedby="tier-scale">
+                                                    <a href="{{ route('create') }}" onclick="fathom.trackGoal('TODB6QOV', 0);" class="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-cosu-600 hover:bg-gray-50 cursor-pointer" aria-describedby="tier-scale">
                                                         Start now
                                                     </a>
                                                 </div>
