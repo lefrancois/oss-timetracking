@@ -2,6 +2,11 @@
     <section aria-labelledby="profile-overview-title">
 
         <div class="rounded-lg bg-white overflow-hidden shadow mt-10 lg:mt-0">
+            @if (!$tracker->items->whereNotNull('end')->count())
+                <div class="bg-cosu-900 text-white text-center text-sm p-1">
+                    {{ __('Please bookmark / save this URL. This is the only way to keep your tracker.') }}
+                </div>
+            @endif
             <div class="bg-white p-6">
                 <div class="sm:flex sm:items-center sm:justify-between">
                     <div class="sm:flex sm:space-x-5 flex-grow">
