@@ -10,6 +10,9 @@
                     <x-roadmap-item icon="table" :done="true">
                         JSON, CSV and XLS export
                     </x-roadmap-item>
+                    <x-roadmap-item icon="moon">
+                        Dark mode
+                    </x-roadmap-item>
                     <x-roadmap-item icon="bar-chart">
                         Charts, everybody loves charts
                     </x-roadmap-item>
