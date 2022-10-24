@@ -1,5 +1,5 @@
 <div class="h-full flex flex-col">
-    <header class="pb-4 lg:pb-20 bg-gradient-to-br from-cosu-500 to-cosu-700">
+    <header class="pb-4 lg:pb-20 bg-gradient-to-br from-cosu-500 to-cosu-700 dark:from-cosu-700 dark:to-cosu-900">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <div class="relative flex items-center justify-center justify-between">
                 <div class="top-1 left-0 py-6 flex-shrink-0 lg:top-0 lg:static">
@@ -8,6 +8,12 @@
                     </a>
                 </div>
                 <div class="space-x-2">
+                    <div onclick="localStorage.theme = 'dark'; document.documentElement.classList.add('dark')" class="dark:hidden inline cursor-pointer">
+                        <i class="ri-contrast-2-fill text-white ri-2x"></i>
+                    </div>
+                    <div onclick="localStorage.theme = 'light'; document.documentElement.classList.remove('dark')" class="hidden dark:inline cursor-pointer">
+                        <i class="ri-contrast-2-line text-white ri-2x"></i>
+                    </div>
                     <a href="https://discord.gg/ZDRk3YG4kY" target="_blank">
                         <i class="ri-discord-fill ri-2x text-white"></i>
                     </a>

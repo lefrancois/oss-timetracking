@@ -1,13 +1,13 @@
 <div>
-    <div class="block transition group cursor-pointer {{ $item->deleted ? 'bg-red-50 hover:bg-red-100 opacity-30 hover:opacity-100' : 'hover:bg-gray-50' }}" wire:click="openEditor">
+    <div class="block transition group cursor-pointer {{ $item->deleted ? 'bg-red-50 dark:bg-red-800 dark:hover:bg-red-900 hover:bg-red-100 opacity-30 hover:opacity-100 dark:hover:opacity-50' : 'hover:bg-gray-50 dark:hover:bg-gray-800' }}" wire:click="openEditor">
         <div class="px-4 py-4 sm:px-6">
             <div class="flex items-center justify-between">
                 @if ($item->title)
-                    <p class="text-lg font-medium text-gray-600 truncate">
+                    <p class="text-lg font-medium text-gray-600 dark:text-gray-200 truncate">
                         {{ $item->title }}
                     </p>
                 @else
-                    <p class="text-gray-300" v-if="!description">
+                    <p class="text-gray-300 dark:text-gray-700">
                         {{ __('No title') }}
                     </p>
                 @endif

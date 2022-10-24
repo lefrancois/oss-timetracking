@@ -1,5 +1,5 @@
 <footer class="container mx-auto py-6">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500 dark:text-gray-400">
         <div class="flex flex-col lg:flex-row justify-between space-y-2 lg:space-y-0">
             <div class="text-center lg:text-left">
                 <span class="">&copy; {{ \Carbon\Carbon::now()->format('Y') }} COSU</span>

@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('page')
-    <div class="container prose mx-auto py-8">
+    <div class="container prose mx-auto py-8 dark:prose-invert">
         <h1>
             Privacy Policy
         </h1>
