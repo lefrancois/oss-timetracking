@@ -8,11 +8,13 @@ use Livewire\Component;
 class TrackerContainer extends Component
 {
     public String $identifier;
+
     public Tracker $tracker;
 
     protected $listeners = ['refreshTracker' => '$refresh'];
 
-    public function mount(String $identifier) {
+    public function mount(string $identifier)
+    {
         $this->identifier = $identifier;
         $this->tracker = Tracker::where('identifier', $this->identifier)->first();
     }

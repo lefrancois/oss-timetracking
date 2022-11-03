@@ -11,17 +11,20 @@ class TrackerItem extends Component
     use DateHelpers;
 
     public Timer $item;
+
     public String $time;
 
     protected $listeners = ['refreshTracker' => '$refresh'];
 
-    public function openEditor() {
+    public function openEditor()
+    {
         $this->emit('openEditor', $this->item);
     }
 
     public function render()
     {
         $this->time = $this->niceTimeDisplay($this->item->duration);
+
         return view('livewire.tracker-item');
     }
 }

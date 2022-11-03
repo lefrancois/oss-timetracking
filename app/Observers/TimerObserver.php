@@ -3,7 +3,6 @@
 namespace App\Observers;
 
 use App\Models\Timer;
-use Carbon\Carbon;
 
 class TimerObserver
 {
@@ -13,7 +12,8 @@ class TimerObserver
      * @param  \App\Models\Timer  $timer
      * @return void
      */
-    public function saving(Timer $timer) {
+    public function saving(Timer $timer)
+    {
         $timer->duration = $timer->start->diffInSeconds($timer->end);
     }
 

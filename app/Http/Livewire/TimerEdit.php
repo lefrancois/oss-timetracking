@@ -4,18 +4,20 @@ namespace App\Http\Livewire;
 
 use App\Http\Traits\DateHelpers;
 use App\Models\Timer;
-use Carbon\Carbon;
 use Livewire\Component;
-use Ramsey\Uuid\Type\Integer;
 
 class TimerEdit extends Component
 {
     use DateHelpers;
 
     public Timer $item;
+
     public $trackerId;
+
     public String $time;
+
     public Bool $showDetails = false;
+
     public String $detailsOpenedTab = 'edit';
 
     protected $listeners = ['openEditor'];
@@ -28,13 +30,15 @@ class TimerEdit extends Component
         'item.end' => 'required|date|after_or_equal:item.start',
     ];
 
-    public function mount() {
+    public function mount()
+    {
         if ($this->item->deleted) {
             $this->detailsOpenedTab = 'history';
         }
     }
 
-    public function openEditor($item) {
+    public function openEditor($item)
+    {
         if ($item != 'new') {
             $this->item = Timer::find($item['id']);
         } else {
@@ -50,7 +54,8 @@ class TimerEdit extends Component
         $this->showDetails = true;
     }
 
-    public function updateTimer() {
+    public function updateTimer()
+    {
         $this->validate();
         if ($this->item->isDirty()) {
             if ($this->item->id) {
@@ -61,18 +66,20 @@ class TimerEdit extends Component
                 $this->item->manual = true;
             }
             $this->item->save();
-        };
+        }
         $this->closeTimerDetails();
     }
 
-    public function deleteTimer() {
+    public function deleteTimer()
+    {
         $this->item->update([
             'deleted' => true,
         ]);
         $this->closeTimerDetails();
     }
 
-    public function closeTimerDetails() {
+    public function closeTimerDetails()
+    {
         $this->showDetails = false;
         $this->emit('refreshTracker');
         $this->emit('updateStats');

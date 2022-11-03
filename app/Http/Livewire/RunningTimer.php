@@ -8,8 +8,8 @@ use Livewire\Component;
 
 class RunningTimer extends Component
 {
-
     public Bool $editTitle = false;
+
     public Timer $timer;
 
     protected $rules = [
@@ -18,7 +18,8 @@ class RunningTimer extends Component
 
     protected $listeners = ['refreshTracker' => '$refresh'];
 
-    public function stopTimer() {
+    public function stopTimer()
+    {
         $this->timer->update([
             'end' => Carbon::now(),
         ]);
@@ -26,7 +27,8 @@ class RunningTimer extends Component
         $this->emit('updateStats');
     }
 
-    public function setTitle(Int $id) {
+    public function setTitle(int $id)
+    {
         $this->timer->save();
         $this->editTitle = false;
     }

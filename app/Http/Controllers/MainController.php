@@ -27,6 +27,7 @@ class MainController extends Controller
         $tracker = Tracker::create([
             'identifier' => Ulid::generate(true),
         ]);
+
         return redirect()->route('tracker', ['id' => $tracker->identifier]);
     }
 

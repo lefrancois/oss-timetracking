@@ -69,7 +69,7 @@ return [
             'level' => env('LOG_LEVEL', 'debug'),
             'days' => 14,
         ],
-        
+
         'flare' => [
             'driver' => 'flare',
         ],
