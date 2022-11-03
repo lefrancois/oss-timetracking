@@ -13,6 +13,7 @@ class TrackerItem extends Component
     public Timer $item;
 
     public String $time;
+    public Int $compareTime;
 
     protected $listeners = ['refreshTracker' => '$refresh'];
 
@@ -24,7 +25,7 @@ class TrackerItem extends Component
     public function render()
     {
         $this->time = $this->niceTimeDisplay($this->item->duration);
-
+        $this->compareTime = $this->item->tracker->items->max('duration');
         return view('livewire.tracker-item');
     }
 }
