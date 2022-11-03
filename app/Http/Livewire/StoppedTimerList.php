@@ -2,22 +2,27 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Tracker as TrackerModel;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use App\Models\Tracker as TrackerModel;
 
 class StoppedTimerList extends Component
 {
     public TrackerModel $tracker;
+
     public $filterDate;
+
     public $filterText;
+
     public Bool $filterDeleted = false;
+
     public $items;
 
     protected $listeners = ['refreshTracker' => '$refresh'];
 
-    public function filter() {
+    public function filter()
+    {
         $this->items = $this->tracker->items;
         if ($this->filterDate) {
             $this->items = $this->items->whereBetween('start', [Carbon::parse($this->filterDate)->startOfDay(), Carbon::parse($this->filterDate)->endOfDay()]);
@@ -35,6 +40,7 @@ class StoppedTimerList extends Component
     public function render()
     {
         $this->filter();
+
         return view('livewire.stopped-timer-list');
     }
 }

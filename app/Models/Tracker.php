@@ -12,7 +12,8 @@ class Tracker extends Model implements Auditable
 
     protected $guarded = ['id'];
 
-    public function items() {
+    public function items()
+    {
         return $this->hasMany(Timer::class);
     }
 }

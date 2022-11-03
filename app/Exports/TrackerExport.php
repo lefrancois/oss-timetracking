@@ -11,7 +11,8 @@ class TrackerExport implements FromCollection, WithHeadings, WithMapping
 {
     protected String $trackerId;
 
-    public function __construct(String $trackerId) {
+    public function __construct(string $trackerId)
+    {
         $this->trackerId = $trackerId;
     }
 
@@ -30,8 +31,8 @@ class TrackerExport implements FromCollection, WithHeadings, WithMapping
     }
 
     /**
-    * @return \Illuminate\Support\Collection
-    */
+     * @return \Illuminate\Support\Collection
+     */
     public function collection()
     {
         return Timer::where('tracker_id', $this->trackerId)->orderBy('start')->get();

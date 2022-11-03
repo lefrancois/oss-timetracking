@@ -8,6 +8,7 @@ use Livewire\Component;
 class Tracker extends Component
 {
     public TrackerModel $tracker;
+
     protected $listeners = ['refreshTracker' => '$refresh'];
 
     public function render()
