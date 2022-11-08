@@ -1,5 +1,7 @@
 <div class="relative">
-    <div class="bg-cosu-900 pointer-events-none bg-opacity-5 absolute h-full transition-all duration-1000" style="width: {{ ($item->duration / $compareTime) * 100 }}%;"></div>
+    @if ($compareTime)
+        <div class="bg-cosu-900 pointer-events-none bg-opacity-5 absolute h-full transition-all duration-1000" style="width: {{ ($item->duration / $compareTime) * 100 }}%;"></div>
+    @endif
 
     <div class="block transition group cursor-pointer {{ $item->deleted ? 'bg-red-50 dark:bg-red-800 dark:hover:bg-red-900 hover:bg-red-100 opacity-30 hover:opacity-100 dark:hover:opacity-50' : 'hover:bg-gray-50 dark:hover:bg-gray-800' }}" wire:click="openEditor">
         <div class="px-4 py-4 sm:px-6">
