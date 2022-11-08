@@ -25,7 +25,7 @@ class TrackerItem extends Component
     public function render()
     {
         $this->time = $this->niceTimeDisplay($this->item->duration);
-        $this->compareTime = $this->item->tracker->items->max('duration');
+        $this->compareTime = $this->item->tracker->items->where('deleted', 0)->max('duration') ?? 0;
         return view('livewire.tracker-item');
     }
 }
